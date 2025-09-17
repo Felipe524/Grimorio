@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout Simples</title>
+  <style>
+    * {margin:0;padding:0;box-sizing:border-box;}
+    body {
+      display:grid;
+      grid-template-areas:
+        "header header"
+        "main aside"
+        "footer footer";
+      grid-template-columns: 3fr 1fr;
+      grid-template-rows: auto 1fr auto;
+      gap:10px;
+      font-family:sans-serif;
+      padding:10px;
+    }
+    header {grid-area:header; background:#add8e6; padding:10px;}
+    main {grid-area:main; background:#f08080; padding:10px;}
+    aside {grid-area:aside; background:#f0e68c; padding:10px;}
+    footer {grid-area:footer; background:#90ee90; padding:10px;}
+    section, article {background:#fff; margin:5px; padding:5px;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Header</h1>
+    <nav>Menu</nav>
+  </header>
+
+  <main>
+    <section>
+      <article>Conteúdo principal 1</article>
+      <article>Conteúdo principal 2</article>
+    </section>
+  </main>
+
+  <aside>
+    <article>Artigo lateral 1</article>
+    <article>Artigo lateral 2</article>
+    <article>Artigo lateral 3</article>
+  </aside>
+
+  <footer>
+    <p>Rodapé</p>
+  </footer>
+</body>
+</html>

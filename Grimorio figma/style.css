@@ -1,0 +1,92 @@
+/* Reset básico */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Grid principal */
+body {
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  display: grid;
+  gap: 12px;
+  padding: 12px;
+  background: #f3f7fb;
+  grid-template-areas:
+    "header header"
+    "main   aside"
+    "footer footer";
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* Áreas do grid */
+header { grid-area: header; }
+main { grid-area: main; }
+aside { grid-area: aside; }
+footer { grid-area: footer; }
+
+/* Aparência das caixas — cores inspiradas no projeto */
+header, main, aside, footer, section, article {
+  border-radius: 6px;
+  padding: 14px;
+  border: 2px solid rgba(0,0,0,0.12);
+}
+
+/* Cabeçalho estilo "faixa azul" */
+header {
+  background: linear-gradient(180deg,#cdeef7,#bfeaf3);
+  border-color: #6fbcd6;
+}
+header h1 { font-size: 1.1rem; margin-bottom: 8px; color: #0b4f5f; }
+
+/* Navegação simples */
+nav ul { list-style: none; display: flex; gap: 10px; flex-wrap: wrap; }
+nav a { text-decoration: none; color: #05464f; font-weight: 600; padding: 6px 8px; border-radius: 4px; }
+nav a:hover { background: rgba(5,70,79,0.08); }
+
+/* Main / Section — grande área (rosa no diagrama) */
+main {
+  background: #f7d6d6; /* tom rosado */
+  border-color: #d28a8a;
+  padding: 18px;
+}
+main section article { background: rgba(255,255,255,0.35); margin-bottom: 12px; padding: 12px; border-radius: 4px; }
+main section article h2 { margin-bottom: 6px; color: #7b2d2d; }
+
+/* Aside — coluna lateral com blocos empilhados (amarelo/verde no diagrama) */
+aside {
+  background: linear-gradient(180deg,#fff7d6,#fff2b8);
+  border-color: #d1c06a;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+}
+aside h2 { margin-bottom: 6px; color: #6b5b00; }
+.icon-group { background: rgba(255,255,255,0.6); padding: 10px; border-radius: 4px; border: 1px solid rgba(0,0,0,0.06); }
+.icon-group h3 { font-size: 0.95rem; margin-bottom: 6px; color: #5b4a00; }
+.icons { font-size: 1.1rem; }
+
+/* Footer — faixa verde */
+footer {
+  background: linear-gradient(180deg,#dff8e6,#c9f0d6);
+  border-color: #6aa77c;
+  text-align: center;
+  font-size: 0.95rem;
+  padding: 12px;
+}
+
+/* Responsividade: empilha em telas pequenas */
+@media (max-width: 800px) {
+  body {
+    grid-template-areas:
+      "header"
+      "main"
+      "aside"
+      "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto auto;
+  }
+
+  nav ul { gap: 6px; }
+}
+
